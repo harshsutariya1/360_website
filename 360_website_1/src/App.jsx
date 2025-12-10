@@ -20,6 +20,12 @@ import {
   Mail,
   Send,
   Clock,
+  Atom,
+  Binary,
+  Calculator,
+  Sigma,
+  Pi,
+  Dna,
 } from "lucide-react";
 
 // --- Components ---
@@ -147,28 +153,76 @@ const Hero = () => {
   return (
     <div
       id="home"
-      className="relative h-screen min-h-[600px] flex items-center justify-center bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 overflow-hidden"
+      className="relative h-screen min-h-[600px] flex items-center justify-center bg-[#0f172a] overflow-hidden"
     >
+      {/* Grid Background */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      </div>
+
       {/* Abstract Background Shapes */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
-        <div className="absolute top-[-10%] right-[-10%] w-96 h-96 bg-yellow-400 rounded-full blur-3xl mix-blend-multiply filter opacity-70 animate-blob"></div>
-        <div className="absolute top-[20%] left-[-10%] w-72 h-72 bg-purple-400 rounded-full blur-3xl mix-blend-multiply filter opacity-70 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-[-10%] right-[20%] w-80 h-80 bg-pink-400 rounded-full blur-3xl mix-blend-multiply filter opacity-70 animate-blob animation-delay-4000"></div>
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] right-[-10%] w-96 h-96 bg-blue-600 rounded-full blur-[100px] opacity-30 animate-blob"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-96 h-96 bg-purple-600 rounded-full blur-[100px] opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-[40%] left-[40%] w-72 h-72 bg-yellow-500 rounded-full blur-[100px] opacity-20 animate-blob animation-delay-4000"></div>
+      </div>
+
+      {/* Floating Icons */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div
+          className="absolute top-[15%] left-[10%] text-blue-400/20 animate-float"
+          style={{ animationDelay: "0s" }}
+        >
+          <Pi size={64} strokeWidth={1.5} />
+        </div>
+        <div
+          className="absolute top-[25%] right-[15%] text-purple-400/20 animate-float"
+          style={{ animationDelay: "2s" }}
+        >
+          <Atom size={80} strokeWidth={1.5} />
+        </div>
+        <div
+          className="absolute bottom-[20%] left-[15%] text-yellow-400/20 animate-float"
+          style={{ animationDelay: "4s" }}
+        >
+          <Sigma size={72} strokeWidth={1.5} />
+        </div>
+        <div
+          className="absolute bottom-[30%] right-[10%] text-green-400/20 animate-float"
+          style={{ animationDelay: "1s" }}
+        >
+          <Dna size={64} strokeWidth={1.5} />
+        </div>
+        <div
+          className="absolute top-[45%] left-[5%] text-pink-400/20 animate-float"
+          style={{ animationDelay: "3s" }}
+        >
+          <Calculator size={48} strokeWidth={1.5} />
+        </div>
+        <div
+          className="absolute top-[10%] right-[35%] text-indigo-400/20 animate-float"
+          style={{ animationDelay: "5s" }}
+        >
+          <Binary size={40} strokeWidth={1.5} />
+        </div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
         <div className="inline-block mb-6 animate-fade-in-up">
-          <span className="bg-blue-800 bg-opacity-50 text-yellow-300 border border-blue-600 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase">
+          <span className="bg-white/10 backdrop-blur-md text-yellow-300 border border-white/20 px-6 py-2 rounded-full text-sm font-semibold tracking-wide uppercase shadow-lg">
             Excellence Since 2006
           </span>
         </div>
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight mb-8 leading-tight animate-fade-in-up animation-delay-150">
-          Everybody is a <span className="text-yellow-400">Genius.</span>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight mb-8 leading-tight animate-fade-in-up animation-delay-150 drop-shadow-2xl">
+          Everybody is a{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">
+            Genius.
+          </span>
         </h1>
-        <p className="mt-4 max-w-2xl mx-auto text-xl text-blue-100 mb-10 italic animate-fade-in-up animation-delay-300">
+        <p className="mt-4 max-w-2xl mx-auto text-xl text-blue-100 mb-10 italic animate-fade-in-up animation-delay-300 font-light">
           "But if you judge a fish by its ability to climb a tree, it will live
           its whole life believing that it is stupid." <br />
-          <span className="text-sm not-italic mt-2 block opacity-80">
+          <span className="text-sm not-italic mt-4 inline-block px-4 py-1 bg-blue-900/50 rounded-lg border border-blue-700/50">
             — Albert Einstein
           </span>
         </p>
@@ -176,13 +230,13 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up animation-delay-450">
           <a
             href="#courses"
-            className="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-blue-900 font-bold rounded-lg shadow-lg transform transition hover:-translate-y-1 hover:shadow-xl flex items-center justify-center gap-2"
+            className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 text-blue-900 font-bold rounded-xl shadow-lg transform transition hover:-translate-y-1 hover:shadow-2xl flex items-center justify-center gap-2"
           >
             Explore Courses <ChevronRight size={20} />
           </a>
           <a
             href="#contact"
-            className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-blue-900 transition-colors flex items-center justify-center"
+            className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-bold rounded-xl hover:bg-white/20 transition-all flex items-center justify-center"
           >
             Contact Us
           </a>
@@ -250,51 +304,6 @@ const About = () => {
         </div>
       </div>
     </section>
-  );
-};
-
-const EinsteinQuote = () => {
-  return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="relative bg-gray-900 rounded-[2.5rem] overflow-hidden">
-        {/* Einstein Section */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/10 skew-x-12 transform origin-bottom-left"></div>
-
-        <div className="grid md:grid-cols-2 gap-8 items-center p-8 md:p-16 relative z-10">
-          {/* Image Side */}
-          <div className="order-2 md:order-1 flex justify-center md:justify-start">
-            <div className="relative">
-              <div className="absolute inset-0 bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Einstein_1921_by_F_Schmutzer_-_restoration.jpg/800px-Einstein_1921_by_F_Schmutzer_-_restoration.jpg"
-                alt="Albert Einstein"
-                className="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-white/10 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
-              />
-              <div className="absolute bottom-4 right-4 bg-yellow-400 text-black font-bold px-4 py-1 rounded-full text-xs uppercase tracking-widest">
-                Inspiration
-              </div>
-            </div>
-          </div>
-
-          {/* Quote Side */}
-          <div className="order-1 md:order-2 text-center md:text-left">
-            <Quote
-              size={40}
-              className="text-yellow-400 mb-6 mx-auto md:mx-0 opacity-50"
-            />
-            <blockquote className="text-2xl md:text-3xl text-white font-serif italic leading-relaxed mb-8">
-              "Everybody is a genius. But if you judge a fish by its ability to
-              climb a tree, it will live its whole life believing that it is
-              stupid."
-            </blockquote>
-            <div className="w-16 h-1 bg-yellow-400 rounded-full mb-4 mx-auto md:mx-0"></div>
-            <p className="text-blue-200 font-bebas text-2xl tracking-widest">
-              Albert Einstein
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
   );
 };
 
@@ -438,6 +447,125 @@ const Courses = () => {
   );
 };
 
+const Faculty = () => {
+  return (
+    <section id="faculty" className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Meet Our Mentors
+          </h2>
+          <p className="text-gray-600">
+            The pillars behind the success of 360° Institute.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          {/* Brijesh Sir */}
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col">
+            <div className="bg-blue-900 h-24 relative">
+              <div className="absolute -bottom-12 left-8 w-24 h-24 bg-gray-200 rounded-full border-4 border-white flex items-center justify-center text-3xl font-bold text-gray-400">
+                BK
+              </div>
+            </div>
+            <div className="pt-16 pb-8 px-8 flex-grow">
+              <h3 className="text-2xl font-bold text-gray-900">
+                Brijesh Kathiriya
+              </h3>
+              <p className="text-yellow-600 font-medium mb-4">
+                M.A. & B.Ed. (English) • Founder
+              </p>
+              <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                With over 18 years of experience, including 7 years at Adani
+                Vidya Mandir. He is a trainer for GPSC exams and has been
+                awarded the "Best English Teacher of District" by the Science
+                Olympiad Foundation.
+              </p>
+              <div className="mt-auto pt-4 border-t border-gray-100">
+                <p className="text-xs text-gray-500 italic">
+                  "I never teach my pupils, I only provide the conditions in
+                  which they can learn."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Jigar Sir */}
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col">
+            <div className="bg-blue-900 h-24 relative">
+              <div className="absolute -bottom-12 left-8 w-24 h-24 bg-gray-200 rounded-full border-4 border-white flex items-center justify-center text-3xl font-bold text-gray-400">
+                JG
+              </div>
+            </div>
+            <div className="pt-16 pb-8 px-8 flex-grow">
+              <h3 className="text-2xl font-bold text-gray-900">Jigar Gajera</h3>
+              <p className="text-yellow-600 font-medium mb-4">
+                B.E. IT (GIT) • Founder
+              </p>
+              <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                An expert in Mathematics with 10+ years of managing the
+                Satellite branch. Known for his creative teaching methodologies
+                that inspire students to love learning rather than just study.
+              </p>
+              <div className="mt-auto pt-4 border-t border-gray-100">
+                <p className="text-xs text-gray-500 italic">
+                  "Quality teaching, hard work and discipline can bring real
+                  success."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const EinsteinQuote = () => {
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="relative bg-gray-900 rounded-[2.5rem] overflow-hidden">
+        {/* Einstein Section */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/10 skew-x-12 transform origin-bottom-left"></div>
+
+        <div className="grid md:grid-cols-2 gap-8 items-center p-8 md:p-16 relative z-10">
+          {/* Image Side */}
+          <div className="order-2 md:order-1 flex justify-center md:justify-start">
+            <div className="relative">
+              <div className="absolute inset-0 bg-blue-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Einstein_1921_by_F_Schmutzer_-_restoration.jpg/800px-Einstein_1921_by_F_Schmutzer_-_restoration.jpg"
+                alt="Albert Einstein"
+                className="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-white/10 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+              />
+              <div className="absolute bottom-4 right-4 bg-yellow-400 text-black font-bold px-4 py-1 rounded-full text-xs uppercase tracking-widest">
+                Inspiration
+              </div>
+            </div>
+          </div>
+
+          {/* Quote Side */}
+          <div className="order-1 md:order-2 text-center md:text-left">
+            <Quote
+              size={40}
+              className="text-yellow-400 mb-6 mx-auto md:mx-0 opacity-50"
+            />
+            <blockquote className="text-2xl md:text-3xl text-white font-serif italic leading-relaxed mb-8">
+              "Everybody is a genius. But if you judge a fish by its ability to
+              climb a tree, it will live its whole life believing that it is
+              stupid."
+            </blockquote>
+            <div className="w-16 h-1 bg-yellow-400 rounded-full mb-4 mx-auto md:mx-0"></div>
+            <p className="text-blue-200 font-bebas text-2xl tracking-widest">
+              Albert Einstein
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Results = () => {
   // Sample data from PDF
   const toppers = [
@@ -531,80 +659,6 @@ const Results = () => {
           >
             Join the league of toppers <ChevronRight size={16} />
           </a>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const Faculty = () => {
-  return (
-    <section id="faculty" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Meet Our Mentors
-          </h2>
-          <p className="text-gray-600">
-            The pillars behind the success of 360° Institute.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-          {/* Brijesh Sir */}
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col">
-            <div className="bg-blue-900 h-24 relative">
-              <div className="absolute -bottom-12 left-8 w-24 h-24 bg-gray-200 rounded-full border-4 border-white flex items-center justify-center text-3xl font-bold text-gray-400">
-                BK
-              </div>
-            </div>
-            <div className="pt-16 pb-8 px-8 flex-grow">
-              <h3 className="text-2xl font-bold text-gray-900">
-                Brijesh Kathiriya
-              </h3>
-              <p className="text-yellow-600 font-medium mb-4">
-                M.A. & B.Ed. (English) • Founder
-              </p>
-              <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                With over 18 years of experience, including 7 years at Adani
-                Vidya Mandir. He is a trainer for GPSC exams and has been
-                awarded the "Best English Teacher of District" by the Science
-                Olympiad Foundation.
-              </p>
-              <div className="mt-auto pt-4 border-t border-gray-100">
-                <p className="text-xs text-gray-500 italic">
-                  "I never teach my pupils, I only provide the conditions in
-                  which they can learn."
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Jigar Sir */}
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col">
-            <div className="bg-blue-900 h-24 relative">
-              <div className="absolute -bottom-12 left-8 w-24 h-24 bg-gray-200 rounded-full border-4 border-white flex items-center justify-center text-3xl font-bold text-gray-400">
-                JG
-              </div>
-            </div>
-            <div className="pt-16 pb-8 px-8 flex-grow">
-              <h3 className="text-2xl font-bold text-gray-900">Jigar Gajera</h3>
-              <p className="text-yellow-600 font-medium mb-4">
-                B.E. IT (GIT) • Founder
-              </p>
-              <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                An expert in Mathematics with 10+ years of managing the
-                Satellite branch. Known for his creative teaching methodologies
-                that inspire students to love learning rather than just study.
-              </p>
-              <div className="mt-auto pt-4 border-t border-gray-100">
-                <p className="text-xs text-gray-500 italic">
-                  "Quality teaching, hard work and discipline can bring real
-                  success."
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -990,9 +1044,9 @@ const App = () => {
       <Navbar isScrolled={isScrolled} />
       <Hero />
       <About />
-      <EinsteinQuote />
       <Courses />
       <Faculty />
+      <EinsteinQuote />
       <Results />
       <Testimonials />
       <ContactUs />
