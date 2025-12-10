@@ -44,20 +44,15 @@ const Navbar = ({ isScrolled }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center gap-2">
-            <div className="bg-blue-900 text-white p-2 rounded-lg font-bold text-xl tracking-tighter">
-              360°
-            </div>
-            <span
-              className={`font-bold text-xl ${
-                isScrolled ? "text-gray-900" : "text-white"
-              }`}
-            >
-              Institute for Development
-            </span>
+            <img
+              src="/logos/360-main-logo_mid.png"
+              alt="360 Institute Logo"
+              className="h-16 w-auto object-contain"
+            />
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8 items-center">
             {navLinks.map((link) => (
               <a
                 key={link.name}
