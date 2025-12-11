@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        abril: ['"Abril Fatface"', 'cursive'],
+        bebas: ['Bebas Neue', 'sans-serif'],
+      },
       animation: {
         blob: "blob 7s infinite",
         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
