@@ -7,6 +7,7 @@ import {
   Facebook,
   Instagram,
   Youtube,
+  ArrowRight,
 } from "lucide-react";
 
 const ContactUs = () => {
@@ -36,56 +37,87 @@ const ContactUs = () => {
           {/* Left Column: Contact Info & Map */}
           <div className="space-y-8">
             {/* Contact Cards */}
+            {/* Contact Cards */}
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="bg-blue-50 p-6 rounded-2xl border border-blue-100 hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+              {/* Call Us Widget */}
+              <div className="group bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-blue-100/50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+
+                <div className="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-200">
                   <Phone size={24} />
                 </div>
-                <h3 className="font-bold text-gray-900 text-lg mb-2">
+
+                <h3 className="font-bold text-gray-900 text-xl mb-4">
                   Call Us
                 </h3>
-                <div className="space-y-2">
-                  <div>
-                    <p className="text-xs text-gray-500 uppercase font-semibold">
-                      Brijesh Sir
-                    </p>
+
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between p-3 rounded-lg bg-gray-50 hover:bg-blue-50 transition-colors group/item cursor-pointer">
+                    <div>
+                      <p className="text-xs text-gray-500 uppercase font-bold tracking-wider">
+                        Brijesh Sir
+                      </p>
+                      <p className="text-gray-900 font-semibold text-sm">
+                        +91 98255 61386
+                      </p>
+                    </div>
                     <a
                       href="tel:+919825561386"
-                      className="text-blue-700 font-medium hover:underline"
+                      className="w-8 h-8 rounded-full bg-white text-blue-600 shadow-sm flex items-center justify-center group-hover/item:bg-blue-600 group-hover/item:text-white transition-all"
                     >
-                      +91 98255 61386
+                      <Phone size={14} />
                     </a>
                   </div>
-                  <div>
-                    <p className="text-xs text-gray-500 uppercase font-semibold">
-                      Jigar Sir
-                    </p>
+
+                  <div className="flex items-center justify-between p-3 rounded-lg bg-gray-50 hover:bg-blue-50 transition-colors group/item cursor-pointer">
+                    <div>
+                      <p className="text-xs text-gray-500 uppercase font-bold tracking-wider">
+                        Jigar Sir
+                      </p>
+                      <p className="text-gray-900 font-semibold text-sm">
+                        +91 94271 45046
+                      </p>
+                    </div>
                     <a
                       href="tel:+919427145046"
-                      className="text-blue-700 font-medium hover:underline"
+                      className="w-8 h-8 rounded-full bg-white text-blue-600 shadow-sm flex items-center justify-center group-hover/item:bg-blue-600 group-hover/item:text-white transition-all"
                     >
-                      +91 94271 45046
+                      <Phone size={14} />
                     </a>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-yellow-50 p-6 rounded-2xl border border-yellow-100 hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+              {/* Email Us Widget */}
+              {/* Email Us Widget */}
+              <div className="group bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-yellow-100/50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
+
+                <div className="w-12 h-12 bg-yellow-500 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-yellow-200">
                   <Mail size={24} />
                 </div>
-                <h3 className="font-bold text-gray-900 text-lg mb-2">
+
+                <h3 className="font-bold text-gray-900 text-xl mb-4">
                   Email Us
                 </h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  Drop us a line anytime for inquiries.
+
+                <p className="text-gray-500 text-sm mb-6 leading-relaxed">
+                  Drop us a line anytime for inquiries, we'll get back to you soon.
                 </p>
-                <a
-                  href="mailto:info@360institute.com"
-                  className="text-yellow-700 font-medium hover:underline"
-                >
-                  info@360institute.com
-                </a>
+
+                <div className="mt-auto">
+                  <a
+                    href="mailto:info@360institute.com"
+                    className="flex items-center justify-between p-4 rounded-xl bg-yellow-50 border border-yellow-100 group-hover:border-yellow-300 transition-all cursor-pointer group/email"
+                  >
+                    <span className="font-semibold text-gray-800 text-sm break-all">
+                      info@360institute.com
+                    </span>
+                    <div className="w-8 h-8 rounded-full bg-white text-yellow-600 shadow-sm flex flex-shrink-0 items-center justify-center group-hover/email:bg-yellow-500 group-hover/email:text-white transition-all">
+                      <ArrowRight size={16} />
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
 
