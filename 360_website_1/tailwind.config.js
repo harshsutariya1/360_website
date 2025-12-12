@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        abril: ['"Abril Fatface"', 'cursive'],
+        abril: ['Abril Fatface', 'cursive'],
         bebas: ['Bebas Neue', 'sans-serif'],
       },
       animation: {

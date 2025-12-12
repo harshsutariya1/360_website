@@ -9,43 +9,56 @@ const Results = () => {
       score: "96% Sci",
       school: "St Ann",
       desc: "Social Sci: 100",
+      image: "/images/viral_jain.jpg",
     },
-    {
-      name: "Yashvi Thakkar",
-      score: "97% SS",
-      school: "Zydus",
-      desc: "English: 89",
-    },
-    {
-      name: "Priyanshi",
-      score: "95.34%",
-      school: "Shivashish",
-      desc: "Class X Result",
-    },
-    {
-      name: "Akshat Purohit",
-      score: "93%",
-      school: "SNGV",
-      desc: "Class X Result",
-    },
-    { name: "Karnav Dave", score: "93%", school: "Zebar", desc: "Maths: 96" },
     {
       name: "Keshvi Vaghasiya",
       score: "95% Maths",
       school: "Apollo",
       desc: "Science: 91",
+      image: "/images/keshvi_vaghasiya.jpg",
     },
     {
       name: "Tannu Jain",
       score: "Acc: 87",
       school: "GJS",
       desc: "Eco: 87 (Class XII)",
+      image: "/images/tannu_jain.jpg",
+    },
+    {
+      name: "Yashvi Thakkar",
+      score: "97% SS",
+      school: "Zydus",
+      desc: "English: 89",
+      image: "/images/yashvi_thakkar.jpg",
+    },
+    {
+      name: "Priyanshi",
+      score: "90.77%",
+      school: "Shivashish",
+      desc: "Class X Result",
+      image: "/images/priyanshi.jpg",
+    },
+    {
+      name: "Akshat Purohit",
+      score: "95.34%",
+      school: "SNGV",
+      desc: "Class X Result",
+      image: "/images/akshat_purohit.jpg",
+    },
+    {
+      name: "Karnav Dave",
+      score: "93%",
+      school: "Zebar",
+      desc: "Maths: 96",
+      image: "/images/karnav_dave.jpg",
     },
     {
       name: "Maanya Singh",
       score: "Eng: 95",
       school: "Zebar",
       desc: "Social Sci: 93",
+      image: "/images/maanya_singh.jpg",
     },
   ];
 
@@ -69,8 +82,16 @@ const Results = () => {
               key={idx}
               className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-blue-200 transition-all text-center group"
             >
-              <div className="w-16 h-16 bg-blue-50 rounded-full mx-auto mb-4 flex items-center justify-center text-blue-900 font-bold text-xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                {student.name.charAt(0)}
+              <div className="w-16 h-16 bg-blue-50 rounded-full mx-auto mb-4 flex items-center justify-center text-blue-900 font-bold text-xl group-hover:bg-blue-600 group-hover:text-white transition-colors overflow-hidden">
+                {student.image ? (
+                  <img
+                    src={student.image}
+                    alt={student.name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  student.name.charAt(0)
+                )}
               </div>
               <h3 className="font-bold text-lg text-gray-900 truncate">
                 {student.name}

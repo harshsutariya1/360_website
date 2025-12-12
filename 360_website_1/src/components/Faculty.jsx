@@ -17,9 +17,11 @@ const Faculty = () => {
           {/* Brijesh Sir */}
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col">
             <div className="bg-blue-900 h-24 relative">
-              <div className="absolute -bottom-12 left-8 w-24 h-24 bg-gray-200 rounded-full border-4 border-white flex items-center justify-center text-3xl font-bold text-gray-400">
-                BK
-              </div>
+              <img
+                src="/images/brijesh_sir.png"
+                alt="Brijesh Kathiriya"
+                className="absolute -bottom-12 left-8 w-24 h-24 rounded-full border-4 border-white object-cover bg-gray-200"
+              />
             </div>
             <div className="pt-16 pb-8 px-8 flex-grow">
               <h3 className="text-2xl font-bold text-gray-900">
@@ -46,9 +48,11 @@ const Faculty = () => {
           {/* Jigar Sir */}
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col">
             <div className="bg-blue-900 h-24 relative">
-              <div className="absolute -bottom-12 left-8 w-24 h-24 bg-gray-200 rounded-full border-4 border-white flex items-center justify-center text-3xl font-bold text-gray-400">
-                JG
-              </div>
+              <img
+                src="/images/jigar_sir.png"
+                alt="Jigar Gajera"
+                className="absolute -bottom-12 left-8 w-24 h-24 rounded-full border-4 border-white object-cover bg-gray-200"
+              />
             </div>
             <div className="pt-16 pb-8 px-8 flex-grow">
               <h3 className="text-2xl font-bold text-gray-900">Jigar Gajera</h3>
