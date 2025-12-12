@@ -15,11 +15,10 @@ const Navbar = ({ isScrolled }) => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-500 ease-in-out ${
-        isScrolled
-          ? "bg-white/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.03)] py-3 border-b border-white/20"
-          : "bg-transparent py-6"
-      }`}
+      className={`fixed w-full z-50 transition-all duration-500 ease-in-out ${isScrolled
+        ? "bg-white/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.03)] py-3 border-b border-white/20"
+        : "bg-transparent py-6"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
@@ -28,9 +27,8 @@ const Navbar = ({ isScrolled }) => {
             <img
               src="/logos/360-main-logo_mid.png"
               alt="360 Institute Logo"
-              className={`transition-all duration-500 ${
-                isScrolled ? "h-12" : "h-14"
-              } w-auto object-contain drop-shadow-sm`}
+              className={`transition-all duration-500 ${isScrolled ? "h-12" : "h-14"
+                } w-auto object-contain drop-shadow-sm`}
             />
           </div>
 
@@ -40,17 +38,15 @@ const Navbar = ({ isScrolled }) => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`relative px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 group ${
-                  isScrolled
-                    ? "text-gray-600 hover:text-blue-900"
-                    : "text-gray-200 hover:text-white"
-                }`}
+                className={`relative px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 group ${isScrolled
+                  ? "text-gray-600 hover:text-blue-900"
+                  : "text-gray-200 hover:text-white"
+                  }`}
               >
                 <span className="relative z-10">{link.name}</span>
                 <span
-                  className={`absolute inset-0 rounded-full transition-all duration-300 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 ${
-                    isScrolled ? "bg-white shadow-sm" : "bg-white/10"
-                  }`}
+                  className={`absolute inset-0 rounded-full transition-all duration-300 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 ${isScrolled ? "bg-white shadow-sm" : "bg-white/10"
+                    }`}
                 ></span>
               </a>
             ))}
@@ -60,11 +56,10 @@ const Navbar = ({ isScrolled }) => {
           <div className="hidden md:flex items-center">
             <a
               href="#contact"
-              className={`group px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg flex items-center gap-2 ${
-                isScrolled
-                  ? "bg-gradient-to-r from-blue-900 to-blue-800 text-white shadow-blue-900/20"
-                  : "bg-white text-blue-900 shadow-xl"
-              }`}
+              className={`group px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg flex items-center gap-2 ${isScrolled
+                ? "bg-gradient-to-r from-blue-900 to-blue-800 text-white shadow-blue-900/20"
+                : "bg-white text-blue-900 shadow-xl"
+                }`}
             >
               Enquire Now
               <ChevronRight
@@ -78,11 +73,10 @@ const Navbar = ({ isScrolled }) => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 rounded-full transition-colors ${
-                isScrolled
-                  ? "text-gray-700 hover:bg-gray-100"
-                  : "text-white hover:bg-white/10"
-              }`}
+              className={`p-2 rounded-full transition-colors ${isScrolled
+                ? "text-gray-700 hover:bg-gray-100"
+                : "text-white hover:bg-white/10"
+                }`}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -92,9 +86,8 @@ const Navbar = ({ isScrolled }) => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl shadow-2xl border-t border-gray-100 transition-all duration-300 origin-top overflow-hidden ${
-          isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl shadow-2xl border-t border-gray-100 transition-all duration-300 origin-top overflow-hidden ${isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <div className="px-4 py-6 space-y-2">
           {navLinks.map((link) => (

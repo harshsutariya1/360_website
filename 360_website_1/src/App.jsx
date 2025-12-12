@@ -9,6 +9,7 @@ import Results from "./components/Results";
 import Testimonials from "./components/Testimonials";
 import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,6 +34,7 @@ const App = () => {
       <Testimonials />
       <ContactUs />
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };
