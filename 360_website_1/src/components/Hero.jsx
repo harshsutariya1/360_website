@@ -119,7 +119,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll Down Indicator */}
-      <div className="absolute bottom-10 left-0 right-0 flex justify-center z-20 md:block hidden pointer-events-none">
+      <div className="absolute bottom-10 left-0 right-0 hidden md:flex justify-center z-20 pointer-events-none">
         <div className="animate-fade-in-up pointer-events-auto" style={{ animationDelay: '1.5s' }}>
           <a href="#about" className="flex flex-col items-center gap-3 group cursor-pointer opacity-60 hover:opacity-100 transition-all duration-300">
             <span className="text-blue-100 text-[10px] tracking-[0.3em] uppercase font-light group-hover:text-yellow-300 transition-colors">
